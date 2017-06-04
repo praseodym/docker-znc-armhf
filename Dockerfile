@@ -1,9 +1,7 @@
-FROM armhf/debian:stretch
-MAINTAINER Mark Janssen <mark@praseodym.net>
+FROM arm32v7/debian:stretch
 
 RUN export DEBIAN_FRONTEND="noninteractive" && \
     apt-get update && \
-    apt-get dist-upgrade -y && \
     apt-get install -y --no-install-recommends znc ca-certificates curl unzip make g++ znc-dev && \
     groupadd -r -g 500 znc && \
     useradd -m -r -u 500 -g znc znc && \
